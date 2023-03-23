@@ -26,10 +26,15 @@ const readLine = require('readline-sync')
 // console.log(avgtemp);
 
 //4
-function CharityCollectionRevisited() {
-    let Money1= Number(readLine.question( ` first donation:`));
-    let Money2= Number(readLine.question( `second donation:`));
-    let sum1=(Money1+Money2)
-    console.log(`Total donations:$${sum1}`);
+// function CharityCollectionRevisited() {
+//     let Money1= Number(readLine.question( ` first donation:`));
+//     let Money2= Number(readLine.question( `second donation:`));
+//     let sum1=(Money1+Money2)
+//     console.log(`Total donations:$${sum1}`);
+// }
+// CharityCollectionRevisited();
+
+//5
+function dartGame() {
+    
 }
-CharityCollectionRevisited();
