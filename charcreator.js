@@ -43,9 +43,10 @@ function createChar(character, list){
     character.Dexterity = rollStat(diceRolled);
     console.log("rolling Knowledge");
     character.Knowledge = rollStat(diceRolled);
+    displayChar(character);
 }
 
-function displaychar(char){
+function displayChar(char){
     console.log(`Name: ${char.name}`);
     console.log(`STR: ${char.strength}`);
     console.log(`DEX: ${char.Dexterity}`);
