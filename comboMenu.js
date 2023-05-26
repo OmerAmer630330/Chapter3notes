@@ -1,68 +1,114 @@
-const readline= require("readline-sync");
+const readline = require("readline-sync");
+let items = [];
+let cost = [];
+let ordered = []
+let menu = ['Chicken: $5.25','Beef: $6.25','Tofu: $5.75'];
+console.log(`${menu}`);
+let beverages = ['CocaCola: $3.00','Sprite: $2.50','Pepsi: $2.50'];
+console.log(`${beverages}`);
+let sizes = ['Small Cup: $1.00','Medium Cup: $1.75','Large Cup: $2.25'];
+console.log(`${sizes}`);
+let fries = ['Small Fries: $1.00','Medium Fries: $1.50','Large Fries: $2.00'];
+console.log(`${fries}`);
+let ketchupPackets =['0.25 per packet'];
+console.log(`${ketchupPackets}`)
+let answer1 = readline.question("what type of sandwich do you want? \n Your answer: ");
+items.push(answer1);
+if(answer1 == 'chicken') {
+    boughtSandwich = 1
+    cost.push(5.25);
+    ordered.push('chicken')
+} else if(answer1 == 'beef') {
+    boughtSandwich = 1
+    cost.push(6.25);
+    ordered.push('beef')
+} else  {
+    boughtSandwich = 1
+    cost.push(5.75);
+    ordered.push('tofu')
+}
+console.log(cost);
 
-let sandwich = readline.question("What type of sandwich would you like:");
-if (sandwich == "chicken") {
-    console.log('$5.25');
-} else if (sandwich == "beef") {
-    console.log('$5.50');
-} else if (sandwich == "vegan") {
-    console.log('$4.75');
-} else {
-    console.log('sorry but we dont have that')
-}
-let drink = readline.question ("Would you like a drink:");
-if (drink == 'yes'){
-    let whatDrink = readline.question ( "What size would you like:")
-    if (whatDrink == "large" ){
-        console.log('$1.75');
-    } else if (whatDrink == "small"){
-        console.log('$1.00')
-    } else if (whatDrink == "medium") {
-        console.log('$1.25')
-    } else {
-        console.log('sorry but we dont have that')
-    } let whatFlavor = readline.question ("What drink would you like:")
-    if ( whatFlavor == "DrPeper", "Coke", "Pepsi", "Sprite", "Fanta" ){
-        console.log('ok')
-    }else {
-        console.log('sorry but we dont gave that')
+let answer2 = readline.question("would you like a beverage? \n Your answer: ");
+items.push(answer2);
+if(answer2 == "yes"){
+    let answer3 = readline.question("what type of beverage do you want? \n Your answer: ");
+    items.push(answer3);
+    if (answer3 == 'de pepper'){
+        cost.push(3.00);
+        ordered.push('mnt dew')
+    }if(answer3 == '7 up'){
+        cost.push(2.50);
+        ordered.push('sprite')
+    }else if (answer3 == 'coke'){
+        cost.push(2.50);
+        ordered.push('pepsi')
     }
-} else if (drink == "no"){
-    console.log('ok then')
-}
-let fries = readline.question('would you like some fries:');
-if (fries == "yes") {
-    let Whatfries = readline.question( 'What size would you like:');
-    if (Whatfries == "large"){
-        console.log('$2.25');
-    } else  if (Whatfries == "small"){
-        console.log('$1.25');
-    } else  if (Whatfries == "medium"){
-        console.log('$1.75 ') ;
+    console.log(cost);
+    let answer4 = readline.question("what size do you want your cup to be? \n Your answer: ");
+    items.push(answer4);
+    if(answer4 == 'small') {
+        boughtDrink = 1
+        cost.push(1.00);
+        ordered.push('small')
+    }if(answer4 == 'medium') {
+        boughtDrink = 1
+        cost.push(1.75);
+        ordered.push('medium')
+    }if(answer4 == 'large') {
+        boughtDrink = 1
+        cost.push(2.25);
+        ordered.push('large')
+    }else if (answer4 == 'no') {
+        console.log("no drink");
     }
-} else if (fries == "no"){
-    console.log('ok then');
 }
-let sauce = readline.question( 'would you like any sauces:');
-if (sauce == "yes"){
-    let Whatsauce = readline.question('What sauce would you like:')
-    if (Whatsauce == 'bbq', 'ketchup', 'ranch', 'mustard'){
-        console.log('0.00')
-    } else {
-        console.log(' sorry but we don not have that')
-    }
-} else if (sauce == "no"){
-    console.log("ok then");
+console.log(cost);
+
+let answer5 = readline.question("Do you want french fries? \n Your answer: ");
+items.push(answer5);
+if (answer5 = 'yes'){
+    let answer6 = readline.question("what size do you want them ? \n Your answer: ");
+    items.push(answer6);
+    if (answer6 == 'small') {
+        let answer7 = readline.question("do you want to mega size them ? \n Your answer: ");
+        items.push(answer7);
+        if(answer7 == 'yes'){
+            boughtFries = 1
+            cost.push(2.00);
+            ordered.push('mega sized fries')
+        }else if(answer7 == 'no bigger size option');
+    }else if(answer6 =='medium'){
+        boughtFries = 1
+        cost.push(1.50);
+        ordered.push('medium')
+    }else if(answer6 == 'large'){
+        boughtFries = 1
+        cost.push(2.00);
+        ordered.push('large')
+    }else if (answer5 == 'no') {
+        console.log("no fries");
+    };
+};
+console.log(cost)
+
+cost.push()
+{
+    let ketchup = readline.question("How much ketchup packets would you like? ($0.25 each): ")
+    cost.push(ketchup * 0.25)
+    ordered.push(` and ${ketchup} ketchup packets.`)
 }
-if (sandwich == "e"){
-    console.log('good bye')
+
+let total = 0;
+for(let i = 0; i < cost.length; i++) {
+    total += cost[i]
 }
-if (drink== "e"){
-    console.log('good bye')
+
+if (boughtSandwich + boughtDrink + boughtFries === 3) {
+    cost = total - 1
 }
-if (fries == "e"){
-    console.log('good bye')
-}
-if (sauces == "e"){
-    console.log('good bye')
-}
+cost = cost + (cost * 0.07);
+cost = cost.toFixed(2);
+
+console.log(`Your order is a ${ordered}`)
+console.log(`Your total is then, $${cost}!`)
